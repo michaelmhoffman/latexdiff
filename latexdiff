@@ -5338,10 +5338,10 @@ verbatim[*]?
 %%% TYPES (Commands for highlighting changed blocks)
 
 %DIF UNDERLINE PREAMBLE
-\RequirePackage[normalem]{ulem}
+\RequirePackage{lua-ul}
 \RequirePackage{color}\definecolor{RED}{rgb}{1,0,0}\definecolor{BLUE}{rgb}{0,0,1}
-\providecommand{\DIFadd}[1]{{\protect\color{blue}\uwave{#1}}}
-\providecommand{\DIFdel}[1]{{\protect\color{red}\sout{#1}}}                     
+\providecommand{\DIFadd}[1]{{\protect\color{blue}\underLine{#1}}}
+\providecommand{\DIFdel}[1]{{\protect\color{red}\strikeThrough{#1}}}                     
 %DIF END UNDERLINE PREAMBLE
 
 %DIF CTRADITIONAL PREAMBLE
@@ -5367,10 +5367,10 @@ verbatim[*]?
 %DIF END CFONT PREAMBLE
 
 %DIF FONTSTRIKE PREAMBLE
-\RequirePackage[normalem]{ulem}
+\RequirePackage{lua-ul}
 \DeclareOldFontCommand{\sf}{\normalfont\sffamily}{\mathsf}
 \providecommand{\DIFadd}[1]{{\sf #1}}
-\providecommand{\DIFdel}[1]{{\footnotesize \sout{#1}}}
+\providecommand{\DIFdel}[1]{{\footnotesize \strikeThrough{#1}}}
 %DIF END FONTSTRIKE PREAMBLE
 
 %DIF CCHANGEBAR PREAMBLE
@@ -5388,11 +5388,11 @@ verbatim[*]?
 %DIF END CFONTCHBAR PREAMBLE
 
 %DIF CULINECHBAR PREAMBLE
-\RequirePackage[normalem]{ulem}
+\RequirePackage{lua-ul}
 \RequirePackage[pdftex]{changebar}
 \RequirePackage{color}\definecolor{RED}{rgb}{1,0,0}\definecolor{BLUE}{rgb}{0,0,1}
-\providecommand{\DIFadd}[1]{\protect\cbstart{\protect\color{blue}\uwave{#1}}\protect\cbend}
-\providecommand{\DIFdel}[1]{\protect\cbdelete{\protect\color{red}\sout{#1}}\protect\cbdelete}
+\providecommand{\DIFadd}[1]{\protect\cbstart{\protect\color{blue}\underLine{#1}}\protect\cbend}
+\providecommand{\DIFdel}[1]{\protect\cbdelete{\protect\color{red}\strikeThrough{#1}}\protect\cbdelete}
 %DIF END CULINECHBAR PREAMBLE
 
 %DIF CHANGEBAR PREAMBLE
@@ -5677,8 +5677,8 @@ verbatim[*]?
 %DIF END COLORLISTINGS PREAMBLE
 
 %DIF DIFCODE_UNDERLINE
-  moredelim=[il][\color{red}\sout]{\%DIF\ <\ },
-  moredelim=[il][\color{blue}\uwave]{\%DIF\ >\ }
+  moredelim=[il][\color{red}\strikeThrough]{\%DIF\ <\ },
+  moredelim=[il][\color{blue}\underLine]{\%DIF\ >\ }
 %DIF END DIFCODE_UNDERLINE
 
 %DIF DIFCODE_CTRADITIONAL
@@ -5697,7 +5697,7 @@ verbatim[*]?
 %DIF END DIFCODE_CFONT
 
 %DIF DIFCODE_FONTSTRIKE
-  moredelim=[il][\scriptsize \sout]{\%DIF\ <\ },
+  moredelim=[il][\scriptsize \strikeThrough]{\%DIF\ <\ },
   moredelim=[il][\sffamily]{\%DIF\ >\ }
 %DIF END DIFCODE_FONTSTRIKE
 
@@ -5717,8 +5717,8 @@ verbatim[*]?
 %DIF END DIFCODE_CCHANGEBAR
 
 %DIF DIFCODE_CULINECHBAR
-  moredelim=[il][\color{red}\sout]{\%DIF\ <\ },
-  moredelim=[il][\color{blue}\uwave]{\%DIF\ >\ }
+  moredelim=[il][\color{red}\strikeThrough]{\%DIF\ <\ },
+  moredelim=[il][\color{blue}\underLine]{\%DIF\ >\ }
 %DIF END DIFCODE_CULINECHBAR
 
 %DIF DIFCODE_CFONTCHBAR
